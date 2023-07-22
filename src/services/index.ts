@@ -1,10 +1,10 @@
 import ServiceService from './service.service';
 import ServiceController from './service.controller';
-import { callTimeService } from '../call-times';
+import { intervalService } from '../interval';
 import ServiceModel from './service.schema';
 import { Router } from 'express';
 
-const serviceService = new ServiceService(ServiceModel, callTimeService);
+const serviceService = new ServiceService(ServiceModel, intervalService);
 const serviceController = new ServiceController(serviceService);
 
 const router = Router();

@@ -4,5 +4,4 @@ export interface Service extends Document {
   name: string;
   url: string;
   intervalInMinutes: number;
-  callTimes: Types.ObjectId[];
 }

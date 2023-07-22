@@ -33,7 +33,7 @@ export default class ServiceController {
   async callWatcher(req: Request, res: Response, next: NextFunction) {
     try {
       const callWatcherDto: CallWatcherDto = req.body;
-      const data = await this.serviceService.watcher(callWatcherDto.time);
+      const data = await this.serviceService.watcherSync(new Date(callWatcherDto.time));
 
       res.json({ message: 'Services called', data });
     } catch (error) {
