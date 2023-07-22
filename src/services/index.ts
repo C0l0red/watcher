@@ -10,6 +10,8 @@ const serviceController = new ServiceController(serviceService);
 const router = Router();
 
 router.post('', serviceController.create.bind(serviceController));
+router.get('', serviceController.find.bind(serviceController));
+router.get('/:name', serviceController.findOne.bind(serviceController));
 router.post('/watcher', serviceController.callWatcher.bind(serviceController));
 
 export default router;

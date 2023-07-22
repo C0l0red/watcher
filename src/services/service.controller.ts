@@ -19,6 +19,17 @@ export default class ServiceController {
     }
   }
 
+  async findOne(req: Request, res: Response, next: NextFunction) {
+    const name: string = req.params.name;
+    const data = await this.serviceService.findOne(name);
+    res.json({message: 'Service fetched', data});
+  }
+
+  async find(req: Request, res: Response, next: NextFunction) {
+    const data = await this.serviceService.find();
+    res.json({message: 'Services fetched', data});
+  }
+
   async callWatcher(req: Request, res: Response, next: NextFunction) {
     try {
       const callWatcherDto: CallWatcherDto = req.body;
